@@ -66,23 +66,23 @@
 			<span class="welcome">Hello
 			  <span class="triangle"></span>
 			</span>
-			<h1>方应杭</h1>
+			<h1>陈行雨</h1>
 			<p>前端开发工程师</p>
 			<hr>
 			<dl>
 			  <dt>年龄</dt>
-			  <dd>18</dd>
+			  <dd>29</dd>
 			  <dt>所在城市</dt>
-			  <dd>北京</dd>
+			  <dd>杭州</dd>
 			  <dt>邮箱</dt>
-			  <dd>fangyinghang@foxmail.com</dd>
+			  <dd>stanleychenxingyu@gmail.com</dd>
 			  <dt>手机</dt>
-			  <dd>13812345678</dd>
+			  <dd>15857176621</dd>
 			</dl>
 		  </div>
 		</div>
 		<footer class="media">
-		  <a href="javascript:;">
+		  <a href="https://github.com/stanleypapaya" target="_blank">
 			<svg class="icon" aria-hidden="true">
 			  <use xlink:href="#icon-github"></use>
 			</svg>
@@ -105,8 +105,8 @@
 		</p>
   
 		<p class="selfIntroduction">
-		方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。
-		<br> 技能：前端开发，Rails 开发，Node.js 开发
+		陈行雨， 前端工程师， 着眼于前端的前沿技术， 目前在饥人谷学习，技能提升中...
+		<br> 技能：javascript， react.js, vue.js
 		</p>
   
 	</main>
@@ -118,7 +118,7 @@
 				HTML 5 &amp; CSS 3
 				</h3>
 				<div class="progressBar">
-					<div class="progress" style="width: 90%;"></div>
+					<div class="progress" style="width: 50%;"></div>
 				</div>
 			</li>
 			<li>
@@ -126,7 +126,7 @@
 				JavaScript
 				</h3>
 				<div class="progressBar">
-					<div class="progress" style="width: 90%"></div>
+					<div class="progress" style="width: 20%"></div>
 				</div>
 			</li>
 			<li>
@@ -134,7 +134,7 @@
 				jQuery
 				</h3>
 				<div class="progressBar">
-					<div class="progress" style="width: 90%"></div>
+					<div class="progress" style="width: 20%"></div>
 				</div>
 			</li>
 			<li>
@@ -142,7 +142,7 @@
 				Vue.js
 				</h3>
 				<div class="progressBar">
-					<div class="progress" style="width: 85%"></div>
+					<div class="progress" style="width: 15%"></div>
 				</div>
 			</li>
 			<li>
@@ -150,7 +150,7 @@
 				React.js
 				</h3>
 				<div class="progressBar">
-					<div class="progress"  style="width: 75%"></div>
+					<div class="progress"  style="width: 15%"></div>
 				</div>
 			</li>
 			<li>
@@ -158,7 +158,7 @@
 				Node.js
 				</h3>
 				<div class="progressBar">
-					<div class="progress"  style="width: 60%"></div>
+					<div class="progress"  style="width: 10%"></div>
 				</div>
 			</li>
 	  </ol>
@@ -166,15 +166,39 @@
 	<section class="portfolio">
 	  <h2>作品集</h2>
 	  <nav>
-		<ol class="clearfix">
-		  <li id="portfolio1">所有</li>
-		  <li id="portfolio2">框架</li>
-		  <li id="portfolio3">原生JS&amp;CSS</li>
-		</ol>
-		<div id="portfolioBar" class="bar state-1">
-		  <div class="bar-inner"></div>
+			<ol class="clearfix">
+		  	<li id="portfolio1">所有</li>
+		  	<li id="portfolio2">框架</li>
+		  	<li id="portfolio3">原生JS&amp;CSS</li>
+			</ol>
+			<div id="portfolioBar" class="bar state-1">
+		  	<div class="bar-inner"></div>
+			</div>
+		</nav>
+			<script>
+				portfolio1.onclick= function(){
+					portfolioBar.className = 'bar state-1'
+				}
+				portfolio2.onclick= function(){
+					portfolioBar.className = 'bar state-2'
+				}
+				portfolio3.onclick= function(){
+					portfolioBar.className = 'bar state-3'
+				}
+			</script>
+
+		<div class="works" style="height: 576px;">
+			<div class="big" style="left: 0; top: 0;">
+				<img src="./resources/images/1.jpg" alt="作品1">
+			</div>
+			<div class="small" style="top: 0; left: 646px;">
+				<img src="./resources/images/2.jpg" alt="作品2">
+			</div>
+			<div class="small" style="top: 298px; left: 646px;" >
+				<img src="./resources/images/3.jpg" alt="作品3">
+			</div>
 		</div>
-	  </nav>
+	  
   </section>
 </body>
 </html>
