@@ -1,5 +1,6 @@
 body {
-  background: black;
+  background:#EFEFEF;
+  font-family: Times, 'Open Sans';
 }
 
 a {
@@ -24,7 +25,7 @@ ol {
 }
 
 h1,h2,h3,h4,h5,h6{
-    font-weight: normal;
+    font-style: normal;
 }
 
 .clearfix::after {
@@ -77,9 +78,9 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .topNavBar .logo {
-  font-size: 24px;
+  font-size: 30px;
   font-family: 'Fredoka One';
-  padding-top: 3px;
+  padding-top: 10px;
   padding-bottom: 4px;
 }
 
@@ -101,15 +102,16 @@ h1,h2,h3,h4,h5,h6{
 
 .banner .mask{
     height: 515px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(10,15,35,0.7)
 }
 
 .userCard{
-    border: 1px solid red;
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     background: #FFFFFF;
+    margin-top: -355px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.8);
 }
 
 .userCard .welcome{
@@ -193,9 +195,93 @@ h1,h2,h3,h4,h5,h6{
 .userCard svg{
     height: 30px;
     width: 30px;
-    fill: #FFFFFF;
-    
+    fill: #FFFFFF; 
 }
 
+.downloadResume-wrapper{
+    text-align: center;
+    margin: 33px auto;
+}
+
+.downloadResume-wrapper > a {
+    display: inline-block;
+    border: 1px solid #CBCDCF;
+    line-height: 16px;
+    padding: 21px 55px;
+    color: #3D4451;
+    font-weight: bold;
+}
+
+.downloadResume-wrapper > a:hover{
+    box-shadow: 1px 5px 10px 0px rgba(0,0,0,0.5);
+    transition: box-shadow 0.5s;
+    -webkit-transition: box-shadow 0.5s;
+    -moz-transition: box-shadow 0.5s;
+    -ms-transition: box-shadow 0.5s;
+    -o-transition: box-shadow 0.5s;
+}
+
+.selfIntroduction{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 1.8;
+    font-family: Times, serif;
+    font-size: 18px;
+}
+
+h2{
+    font-family: Times,"Open Sans";
+    font-size: 34px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    color: #3D4451;
+}
+
+h3{
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    color: #3E4552;
+}
+
+.skills > ol{
+    margin-top: 30px;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background:#FFFFFF;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.8);
+    padding: 50px 50px 10px 50px;
+    box-sizing: border-box;
+}
+
+.skills > ol > li{
+    width: 48%;
+    float: left; 
+    margin-bottom: 40px;  
+}
+
+.skills > ol > li:nth-child(even){
+    float: right;
+}
+
+
+.skills > ol > li > .progressBar{
+    margin-top: 4px;
+    height: 5px;
+    width: 100%;
+    background: #F8DFE0;
+    border-radius: 2px;
+}
+
+.skills > ol > li > .progressBar > .progress{
+    background: #E8676B;
+    border-radius: 2px;
+    height: 100%;
+}
 
 
