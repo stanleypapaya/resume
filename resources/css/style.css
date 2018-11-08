@@ -79,6 +79,7 @@ h6 {
     float: left;
     margin-left: 17px;
     margin-right: 17px;
+    position: relative;
 }
 
 .topNavBar nav>ul>li>a {
@@ -91,7 +92,7 @@ h6 {
     position: relative;
 }
 
-.topNavBar nav>ul>li>a:hover::after {
+.topNavBar nav>ul>li> a:hover::after {
     content:'';
     display: block;
     position: absolute;
@@ -105,17 +106,49 @@ h6 {
     -webkit-animation: b ease-out 0.1s;
 }
 
-.topNavBar .subMenu{
-    display: none;
-}
-
-.topNavBar .subMenu.active{
-
-}
-
 @keyframes b{
     0%  {width: 0%;}
     100%{width: 100%;}
+}
+
+.topNavBar .subMenu{
+    margin-top:5px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    color: #3D4451;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.topNavBar .subMenu > li{
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.topNavBar li.active >  .subMenu{
+    display: block;
+    animation: submenuSlide ease-out 0.1s;
+    -webkit-animation: submenuSlide ease-out 0.1s;
+}
+
+@keyframes submenuSlide{
+    0%{
+        transform:translateX(-100%);
+        -webkit-transform:translateX(-100%);
+        -moz-transform:translateX(-100%);
+        -ms-transform:translateX(-100%);
+        -o-transform:translateX(-100%);
+}
+    100%{
+        transform:translateX(0);
+        -webkit-transform:translateX(0);
+        -moz-transform:translateX(0);
+        -ms-transform:translateX(0);
+        -o-transform:translateX(0);
+}
 }
 
 .topNavBar .logo {
