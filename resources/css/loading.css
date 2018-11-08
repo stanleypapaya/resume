@@ -1,0 +1,55 @@
+.main-welcome{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 11;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-welcome.active{
+    display: flex;
+}
+
+.loading{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  
+.loading::before,.loading::after{
+    content:'';
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background: grey;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+    animation: s 2s linear infinite;
+  }
+  
+  .loading::after{
+    animation-delay: 1s;
+  }
+  
+  @keyframes s{
+    0%{
+      width: 0; height: 0;
+      opacity: 1;
+    }
+    100%{
+      width: 100px; height: 100px;
+      opacity: 0;
+    }
+  }

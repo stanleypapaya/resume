@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<link rel="stylesheet" href="./resources/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="./resources/css/loading.css" type="text/css">
 	<link rel="stylesheet" href="./resources/css/style.css" type="text/css">
 	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
 	<style type="text/css">
@@ -21,7 +22,10 @@
 	</style>
 </head>
 <body>
-	<div class="topNavBar">
+	<div id="mainWelcome" class="main-welcome active">
+		<div class="loading"></div>
+	</div>
+	<div id="topNavBar" class="topNavBar">
 	  <div class="topNavBar-inner clearfix">
 		<a class="logo" href="#" alt="logo" style="float: left;">
 		  <span class="rs">RS</span><span class="card">card</span>
@@ -35,7 +39,12 @@
 			  <a href="#">技能</a>
 			</li>
 			<li>
-			  <a href="#">作品</a>
+				<a href="#">作品</a>
+				<ul class="subMenu">
+					<li>作品1</li>
+					<li>作品2</li>
+					<li>作品3</li>
+				</ul>	
 			</li>
 			<li>
 			  <a href="#">博客</a>
@@ -199,6 +208,18 @@
 			</div>
 		</div>
 	  
-  </section>
+	</section>
+	<script>
+		setTimeout(function(){
+			mainWelcome.classList.remove('active')
+		},100)			
+		window.onscroll = function(){
+			if(window.scrollY > 0){
+				topNavBar.classList.add('sticky')
+			}else{
+				topNavBar.classList.remove('sticky')
+			}
+		}
+	</script>
 </body>
 </html>
