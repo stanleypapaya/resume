@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./resources/css/loading.css" type="text/css">
 	<link rel="stylesheet" href="./resources/css/style.css" type="text/css">
 	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<style type="text/css">
 		.icon {
 		   width: 1em; height: 1em;
@@ -71,7 +72,7 @@
 	  <div class="mask"></div>
 	</div>
 	<main>
-	  <div id=siteAbout class="userCard">
+	  <div data-x id=siteAbout class="userCard">
 		<div class="pictureAndText clearfix">
 		  <div class="picture">
 			<img src="./resources/images/avatar.jpg" width=299 height=347 alt="头像">
@@ -124,7 +125,7 @@
 		</p>
   
 	</main>
-	<section id=siteSkills class="skills">
+	<section data-x id=siteSkills class="skills">
 	  <h2>技能</h2>
 	  <ol class="clearfix">
 			<li>
@@ -177,7 +178,7 @@
 			</li>
 	  </ol>
 	</section>
-	<section id=siteWorks class="portfolio">
+	<section data-x id=siteWorks class="portfolio">
 	  <h2>作品集</h2>
 	  <nav>
 			<ol class="clearfix">
@@ -224,6 +225,10 @@
 			}else{
 				topNavBar.classList.remove('sticky')
 			}
+			let specialTags = document.querySelectorAll('[data-x]')
+			for(let i = 0; i< specialTags.length; i++){
+				console.log(specialTags[i].offsetTop)
+			}
 		}
 
 		let liTags = document.getElementsByClassName('menuTrigger')
@@ -236,6 +241,12 @@
 				e.currentTarget.classList.remove('active')
 			}
 		}
+
+		function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+		}
+		requestAnimationFrame(animate);
 		
 		let aTags = document.querySelectorAll('nav.menu > ul >li >a')
 		for(let i = 0; i<aTags.length; i++){
@@ -245,16 +256,20 @@
 				let href = a.getAttribute('href')
 				let element = document.querySelector(href)
 				let top = element.offsetTop
-				let currentTop = window.scrollTop
 				let targetTop = top - 80
-				let n = 25//动25次
-				let duration = 500 / n //多长时间动一次
-				setInterval(()=>{
-					window.scrollTo(0, top-80)
-				})
-				
+				let currentTop = window.scrollY
+				var coords = { y: currentTop } // Start at (0, 0)
+				var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
+        .to({ y: targetTop }, 500) // Move to (300, 200) in 1 second.
+        .easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
+        .onUpdate(function() { // Called after tween.js updates 'coords'.
+            // Move 'box' to the position described by 'coords' with a CSS translation.
+            window.scrollTo(0, coords.y)
+        })
+        .start()		
 			}
 		}
 	</script>
 </body>
 </html>
+
