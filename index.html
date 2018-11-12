@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,122 +16,124 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<style type="text/css">
 		.icon {
-		   width: 1em; height: 1em;
-		   vertical-align: -0.15em;
-		   fill: currentColor;
-		   overflow: hidden;
+			width: 1em;
+			height: 1em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
 		}
 	</style>
 </head>
+
 <body>
 	<div id="mainWelcome" class="main-welcome active">
 		<div class="loading"></div>
 	</div>
 	<div id="topNavBar" class="topNavBar">
-	  <div class="topNavBar-inner clearfix">
-		<a class="logo" href="#" alt="logo" style="float: left;">
-		  <span class="rs">RS</span><span class="card">card</span>
-		</a>
-		<nav style="float: right;" class="menu">
-		  <ul class="clearfix">
-				<li>
-					<a href="#siteAbout">关于</a>
-				</li>
-				<li>
-					<a href="#siteSkills">技能</a>
-				</li>
-				<li class="menuTrigger">
-					<a href="#siteWorks">作品</a>
-					<ul id="subMenu" class="subMenu">
-						<li>作品1</li>
-						<li>作品2</li>
-						<li>作品3</li>
-					</ul>	
-				</li>
-				<li class="menuTrigger">
-					<a href="#">博客</a>
-					<ul id="" class="subMenu">
+		<div class="topNavBar-inner clearfix">
+			<a class="logo" href="#" alt="logo" style="float: left;">
+				<span class="rs">RS</span><span class="card">card</span>
+			</a>
+			<nav style="float: right;" class="menu">
+				<ul class="clearfix">
+					<li class="menuTrigger">
+						<a href="#siteAbout">关于</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#siteSkills">技能</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#siteWorks">作品</a>
+						<ul id="subMenu" class="subMenu">
+							<li>作品1</li>
+							<li>作品2</li>
+							<li>作品3</li>
+						</ul>
+					</li>
+					<li class="menuTrigger">
+						<a href="#">博客</a>
+						<ul id="" class="subMenu">
 							<li>博客1</li>
 							<li>博客2</li>
 							<li>博客3</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">日历</a>
-				</li>
-				<li>
-					<a href="#">联系方式</a>
-				</li>
-				<li>
-					<a href="#">其他</a>
-				</li>
-		  </ul>
-		</nav>
-	  </div>
+						</ul>
+					</li>
+					<li class="menuTrigger">
+						<a href="#">日历</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#">联系方式</a>
+					</li>
+					<li class="menuTrigger">
+						<a href="#">其他</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 	<div class="banner">
-	  <div class="mask"></div>
+		<div class="mask"></div>
 	</div>
 	<main>
-	  <div data-x id=siteAbout class="userCard">
-		<div class="pictureAndText clearfix">
-		  <div class="picture">
-			<img src="./resources/images/avatar.jpg" width=299 height=347 alt="头像">
-		  </div>
-		  <div class="text">
-			<span class="welcome">Hello
-			  <span class="triangle"></span>
-			</span>
-			<h1>陈行雨</h1>
-			<p>前端开发工程师</p>
-			<hr>
-			<dl>
-			  <dt>年龄</dt>
-			  <dd>29</dd>
-			  <dt>所在城市</dt>
-			  <dd>杭州</dd>
-			  <dt>邮箱</dt>
-			  <dd>stanleychenxingyu@gmail.com</dd>
-			  <dt>手机</dt>
-			  <dd>15857176621</dd>
-			</dl>
-		  </div>
+		<div data-x id=siteAbout class="userCard">
+			<div class="pictureAndText clearfix">
+				<div class="picture">
+					<img src="./resources/images/avatar.jpg" width=299 height=347 alt="头像">
+				</div>
+				<div class="text">
+					<span class="welcome">Hello
+						<span class="triangle"></span>
+					</span>
+					<h1>陈行雨</h1>
+					<p>前端开发工程师</p>
+					<hr>
+					<dl>
+						<dt>年龄</dt>
+						<dd>29</dd>
+						<dt>所在城市</dt>
+						<dd>杭州</dd>
+						<dt>邮箱</dt>
+						<dd>stanleychenxingyu@gmail.com</dd>
+						<dt>手机</dt>
+						<dd>15857176621</dd>
+					</dl>
+				</div>
+			</div>
+			<footer class="media">
+				<a href="https://github.com/stanleypapaya" target="_blank">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-github"></use>
+					</svg>
+				</a>
+				<a href="https://stanleypapaya.github.io/index.html" target="_blank">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-bokeblogger3"></use>
+					</svg>
+				</a>
+				<a href="javascript:;">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-weibo"></use>
+					</svg>
+				</a>
+			</footer>
 		</div>
-		<footer class="media">
-		  <a href="https://github.com/stanleypapaya" target="_blank">
-			<svg class="icon" aria-hidden="true">
-			  <use xlink:href="#icon-github"></use>
-			</svg>
-		  </a>
-		  <a href="https://stanleypapaya.github.io/index.html" target="_blank">
-			<svg class="icon" aria-hidden="true">
-			  <use xlink:href="#icon-bokeblogger3"></use>
-			</svg>
-		  </a>
-		  <a href="javascript:;">
-			<svg class="icon" aria-hidden="true">
-			  <use xlink:href="#icon-weibo"></use>
-			</svg>
-		  </a>
-		</footer>
-		</div>
-  
+
 		<p class="downloadResume-wrapper">
 			<a class="downloadResume" href="./resources/files/resume.pdf" target="_blank" download>下载 PDF 简历</a>
 		</p>
-  
+
 		<p class="selfIntroduction">
-		陈行雨， 前端工程师， 着眼于前端的前沿技术， 目前在饥人谷学习，技能提升中...
-		<br> 技能：javascript， react.js, vue.js
+			陈行雨， 前端工程师， 着眼于前端的前沿技术， 目前在饥人谷学习，技能提升中...
+			<br> 技能：javascript， react.js, vue.js
 		</p>
-  
+
 	</main>
 	<section data-x id=siteSkills class="skills">
-	  <h2>技能</h2>
-	  <ol class="clearfix">
+		<h2>技能</h2>
+		<ol class="clearfix">
 			<li>
 				<h3>
-				HTML 5 &amp; CSS 3
+					HTML 5 &amp; CSS 3
 				</h3>
 				<div class="progressBar">
 					<div class="progress" style="width: 50%;"></div>
@@ -138,7 +141,7 @@
 			</li>
 			<li>
 				<h3>
-				JavaScript
+					JavaScript
 				</h3>
 				<div class="progressBar">
 					<div class="progress" style="width: 20%"></div>
@@ -146,7 +149,7 @@
 			</li>
 			<li>
 				<h3>
-				jQuery
+					jQuery
 				</h3>
 				<div class="progressBar">
 					<div class="progress" style="width: 20%"></div>
@@ -154,7 +157,7 @@
 			</li>
 			<li>
 				<h3>
-				Vue.js
+					Vue.js
 				</h3>
 				<div class="progressBar">
 					<div class="progress" style="width: 15%"></div>
@@ -162,45 +165,45 @@
 			</li>
 			<li>
 				<h3>
-				React.js
+					React.js
 				</h3>
 				<div class="progressBar">
-					<div class="progress"  style="width: 15%"></div>
+					<div class="progress" style="width: 15%"></div>
 				</div>
 			</li>
 			<li>
 				<h3>
-				Node.js
+					Node.js
 				</h3>
 				<div class="progressBar">
-					<div class="progress"  style="width: 10%"></div>
+					<div class="progress" style="width: 10%"></div>
 				</div>
 			</li>
-	  </ol>
+		</ol>
 	</section>
 	<section data-x id=siteWorks class="portfolio">
-	  <h2>作品集</h2>
-	  <nav>
+		<h2>作品集</h2>
+		<nav>
 			<ol class="clearfix">
-		  	<li id="portfolio1">所有</li>
-		  	<li id="portfolio2">框架</li>
-		  	<li id="portfolio3">原生JS&amp;CSS</li>
+				<li id="portfolio1">所有</li>
+				<li id="portfolio2">框架</li>
+				<li id="portfolio3">原生JS&amp;CSS</li>
 			</ol>
 			<div id="portfolioBar" class="bar state-1">
-		  	<div class="bar-inner"></div>
+				<div class="bar-inner"></div>
 			</div>
 		</nav>
-			<script>
-				portfolio1.onclick= function(){
-					portfolioBar.className = 'bar state-1'
-				}
-				portfolio2.onclick= function(){
-					portfolioBar.className = 'bar state-2'
-				}
-				portfolio3.onclick= function(){
-					portfolioBar.className = 'bar state-3'
-				}
-			</script>
+		<script>
+			portfolio1.onclick = function () {
+				portfolioBar.className = 'bar state-1'
+			}
+			portfolio2.onclick = function () {
+				portfolioBar.className = 'bar state-2'
+			}
+			portfolio3.onclick = function () {
+				portfolioBar.className = 'bar state-3'
+			}
+		</script>
 
 		<div class="works" style="height: 576px;">
 			<div class="big" style="left: 0; top: 0;">
@@ -209,48 +212,78 @@
 			<div class="small" style="top: 0; left: 646px;">
 				<img src="./resources/images/2.jpg" alt="作品2">
 			</div>
-			<div class="small" style="top: 298px; left: 646px;" >
+			<div class="small" style="top: 298px; left: 646px;">
 				<img src="./resources/images/3.jpg" alt="作品3">
 			</div>
 		</div>
-	  
+
 	</section>
 	<script>
-		setTimeout(function(){
+		setTimeout(function () {
 			mainWelcome.classList.remove('active')
-		},100)			
-		window.onscroll = function(){
-			if(window.scrollY > 0){
-				topNavBar.classList.add('sticky')
-			}else{
-				topNavBar.classList.remove('sticky')
-			}
-			let specialTags = document.querySelectorAll('[data-x]')
-			for(let i = 0; i< specialTags.length; i++){
-				console.log(specialTags[i].offsetTop)
-			}
+		}, 1000)
+
+		let specialTags = document.querySelectorAll('[data-x]')
+		for (let i = 0; i < specialTags.length; i++) {
+			specialTags[i].classList.add('offset')
 		}
 
+		setTimeout(function () {
+			findClosestSection()
+		}, 1000)
+
+		window.onscroll = function () {
+			if (window.scrollY > 0) {
+				topNavBar.classList.add('sticky')
+			} else {
+				topNavBar.classList.remove('sticky')
+			}
+			findClosestSection()
+		}
+
+		function findClosestSection() {
+			let specialTags = document.querySelectorAll('[data-x]')
+			let min = Math.abs(window.scrollY - specialTags[0].offsetTop)
+			let minIndex = 0
+			for (let i = 1; i < specialTags.length; i++) {
+				if (Math.abs(window.scrollY - specialTags[i].offsetTop) < min) {
+					min = Math.abs(window.scrollY - specialTags[i].offsetTop)
+					minIndex = i
+				}
+			}
+
+			specialTags[minIndex].classList.remove('offset')
+			let id = specialTags[minIndex].id
+			let a = document.querySelector('a[href="#' + id + '"]')
+			let li = a.parentNode
+			let siblings = li.parentNode.children
+			for (i = 0; i < siblings.length; i++) {
+				siblings[i].classList.remove('highlight')
+			}
+			li.classList.add('highlight')
+		}
+
+
 		let liTags = document.getElementsByClassName('menuTrigger')
-		for(let i=0; i< liTags.length;i++){
-			liTags[i].onmouseenter = function(e){
-					e.currentTarget.classList.add('active')
-				}			
-			
-			liTags[i].onmouseleave = function(e){
+		for (let i = 0; i < liTags.length; i++) {
+			liTags[i].onmouseenter = function (e) {
+				e.currentTarget.classList.add('active')
+			}
+
+			liTags[i].onmouseleave = function (e) {
 				e.currentTarget.classList.remove('active')
 			}
 		}
 
 		function animate(time) {
-    requestAnimationFrame(animate);
-    TWEEN.update(time);
+			requestAnimationFrame(animate);
+			TWEEN.update(time);
 		}
 		requestAnimationFrame(animate);
-		
+
 		let aTags = document.querySelectorAll('nav.menu > ul >li >a')
-		for(let i = 0; i<aTags.length; i++){
-			aTags[i].onclick = function(e){
+		for (let i = 0; i < aTags.length; i++) {
+			aTags[i].onclick = function (e) {
 				e.preventDefault()
 				let a = e.currentTarget
 				let href = a.getAttribute('href')
@@ -258,18 +291,22 @@
 				let top = element.offsetTop
 				let targetTop = top - 80
 				let currentTop = window.scrollY
-				var coords = { y: currentTop } // Start at (0, 0)
+				var coords = {
+					y: currentTop
+				} // Start at (0, 0)
 				var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-        .to({ y: targetTop }, 500) // Move to (300, 200) in 1 second.
-        .easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
-        .onUpdate(function() { // Called after tween.js updates 'coords'.
-            // Move 'box' to the position described by 'coords' with a CSS translation.
-            window.scrollTo(0, coords.y)
-        })
-        .start()		
+					.to({
+						y: targetTop
+					}, 500) // Move to (300, 200) in 1 second.
+					.easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
+					.onUpdate(function () { // Called after tween.js updates 'coords'.
+						// Move 'box' to the position described by 'coords' with a CSS translation.
+						window.scrollTo(0, coords.y)
+					})
+					.start()
 			}
 		}
 	</script>
 </body>
-</html>
 
+</html>

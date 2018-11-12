@@ -39,6 +39,31 @@ h6 {
     clear: both;
 }
 
+[data-x].active {
+    outline: 5px solid red
+}
+
+[data-x].offset {
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+}
+
+[data-x] {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
 .topNavBar {
     padding: 20px 0 20px 0;
     color: #b7b7b7;
@@ -54,7 +79,7 @@ h6 {
     z-index: 10;
 }
 
-.topNavBar.sticky{
+.topNavBar.sticky {
     background: #FFFFFF;
     padding: 10px 0 10px 0;
     color: #3D4451;
@@ -92,8 +117,9 @@ h6 {
     position: relative;
 }
 
-.topNavBar nav>ul>li> a:hover::after {
-    content:'';
+.topNavBar nav>ul>li.active>a::after,
+.topNavBar nav>ul>li.highlight>a::after {
+    content: '';
     display: block;
     position: absolute;
     top: 100%;
@@ -106,13 +132,17 @@ h6 {
     -webkit-animation: b ease-out 0.1s;
 }
 
-@keyframes b{
-    0%  {width: 0%;}
-    100%{width: 100%;}
+@keyframes b {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
-.topNavBar .subMenu{
-    margin-top:5px;
+.topNavBar .subMenu {
+    margin-top: 5px;
     display: none;
     position: absolute;
     left: 0;
@@ -122,33 +152,33 @@ h6 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.topNavBar .subMenu > li{
+.topNavBar .subMenu>li {
     white-space: nowrap;
     padding: 5px 10px;
     font-size: 12px;
 }
 
-.topNavBar li.active >  .subMenu{
+.topNavBar li.active>.subMenu {
     display: block;
     animation: submenuSlide ease-out 0.1s;
     -webkit-animation: submenuSlide ease-out 0.1s;
 }
 
-@keyframes submenuSlide{
-    0%{
-        transform:translateX(-100%);
-        -webkit-transform:translateX(-100%);
-        -moz-transform:translateX(-100%);
-        -ms-transform:translateX(-100%);
-        -o-transform:translateX(-100%);
-}
-    100%{
-        transform:translateX(0);
-        -webkit-transform:translateX(0);
-        -moz-transform:translateX(0);
-        -ms-transform:translateX(0);
-        -o-transform:translateX(0);
-}
+@keyframes submenuSlide {
+    0% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
 }
 
 .topNavBar .logo {
@@ -353,12 +383,31 @@ section.portfolio {
     width: 100%;
     background: #F8DFE0;
     border-radius: 2px;
+    overflow: hidden;
 }
 
 .skills>ol>li>.progressBar>.progress {
     background: #E8676B;
     border-radius: 2px;
     height: 100%;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+.skills.offset>ol>li>.progressBar>.progress {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
 }
 
 section.portfolio {
