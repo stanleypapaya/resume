@@ -13,20 +13,6 @@
 	<link rel="stylesheet" href="./resources/css/loading.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
 	<link rel="stylesheet" href="./resources/css/style.css" type="text/css">
-	
-	<style type="text/css">
-		.icon {
-			width: 1em;
-			height: 1em;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
-		}
-		.swiper-container {
-    		width: 940px;
-    		height: 470px;
-		}
-	</style>
 </head>
 
 <body>
@@ -228,99 +214,18 @@
 	
 
 	</section>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
-	<script src="./resources/js/swiper.js"></script>
 	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+	<script src="./resources/js/swiper.js"></script>
+	<script src="./resources/js/auto-slide-up.js"></script>
+	<script src="./resources/js/smooth-slider.js"></script>
 	<script>
 		
 		setTimeout(function () {
 			mainWelcome.classList.remove('active')
 		}, 2000)
 
-		let specialTags = document.querySelectorAll('[data-x]')
-		for (let i = 0; i < specialTags.length; i++) {
-			specialTags[i].classList.add('offset')
-		}
-
-		setTimeout(function () {
-			findClosestSection()
-		}, 2000)
-
-		window.onscroll = function () {
-			if (window.scrollY > 0) {
-				topNavBar.classList.add('sticky')
-			} else {
-				topNavBar.classList.remove('sticky')
-			}
-			findClosestSection()
-		}
-
-		function findClosestSection() {
-			let specialTags = document.querySelectorAll('[data-x]')
-			let min = Math.abs(window.scrollY - specialTags[0].offsetTop)
-			let minIndex = 0
-			for (let i = 1; i < specialTags.length; i++) {
-				if (Math.abs(window.scrollY - specialTags[i].offsetTop) < min) {
-					min = Math.abs(window.scrollY - specialTags[i].offsetTop)
-					minIndex = i
-				}
-			}
-
-			specialTags[minIndex].classList.remove('offset')
-			let id = specialTags[minIndex].id
-			let a = document.querySelector('a[href="#' + id + '"]')
-			let li = a.parentNode
-			let siblings = li.parentNode.children
-			for (i = 0; i < siblings.length; i++) {
-				siblings[i].classList.remove('highlight')
-			}
-			li.classList.add('highlight')
-		}
-
-
-		let liTags = document.getElementsByClassName('menuTrigger')
-		for (let i = 0; i < liTags.length; i++) {
-			liTags[i].onmouseenter = function (e) {
-				e.currentTarget.classList.add('active')
-			}
-
-			liTags[i].onmouseleave = function (e) {
-				e.currentTarget.classList.remove('active')
-			}
-		}
-
-		function animate(time) {
-			requestAnimationFrame(animate);
-			TWEEN.update(time);
-		}
-		requestAnimationFrame(animate);
-
-		let aTags = document.querySelectorAll('nav.menu > ul >li >a')
-		for (let i = 0; i < aTags.length; i++) {
-			aTags[i].onclick = function (e) {
-				e.preventDefault()
-				let a = e.currentTarget
-				let href = a.getAttribute('href')
-				let element = document.querySelector(href)
-				let top = element.offsetTop
-				let targetTop = top - 80
-				let currentTop = window.scrollY
-				var coords = {
-					y: currentTop
-				} // Start at (0, 0)
-				var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-					.to({
-						y: targetTop
-					}, 500) // Move to (300, 200) in 1 second.
-					.easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
-					.onUpdate(function () { // Called after tween.js updates 'coords'.
-						// Move 'box' to the position described by 'coords' with a CSS translation.
-						window.scrollTo(0, coords.y)
-					})
-					.start()
-			}
-		}
 	</script>
 </body>
 

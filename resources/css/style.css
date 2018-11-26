@@ -33,6 +33,19 @@ h6 {
     font-style: normal;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.swiper-container {
+    width: 940px;
+    height: 470px;
+}
+
 .clearfix::after {
     content: '';
     display: block;
