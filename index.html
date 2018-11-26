@@ -11,9 +11,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<link rel="stylesheet" href="./resources/css/reset.css" type="text/css">
 	<link rel="stylesheet" href="./resources/css/loading.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
 	<link rel="stylesheet" href="./resources/css/style.css" type="text/css">
-	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+	
 	<style type="text/css">
 		.icon {
 			width: 1em;
@@ -21,6 +21,10 @@
 			vertical-align: -0.15em;
 			fill: currentColor;
 			overflow: hidden;
+		}
+		.swiper-container {
+    		width: 940px;
+    		height: 470px;
 		}
 	</style>
 </head>
@@ -205,20 +209,31 @@
 			}
 		</script>
 
-		<div class="works" style="height: 576px;">
-			<div class="big" style="left: 0; top: 0;">
-				<img src="./resources/images/1.jpg" alt="作品1">
+		<!-- Slider main container -->
+		<div class="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<img class="swiper-slide" src="./resources/images/canvas.jpg" alt="">
+				<img class="swiper-slide" src="./resources/images/kbd-nav.jpg" alt="">
+				<img class="swiper-slide" src="./resources/images/apple-like-swiper.jpg" alt="">
 			</div>
-			<div class="small" style="top: 0; left: 646px;">
-				<img src="./resources/images/2.jpg" alt="作品2">
-			</div>
-			<div class="small" style="top: 298px; left: 646px;">
-				<img src="./resources/images/3.jpg" alt="作品3">
-			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+		
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
+	
 
 	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+	<script src="./resources/js/swiper.js"></script>
+	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<script>
+		
 		setTimeout(function () {
 			mainWelcome.classList.remove('active')
 		}, 2000)

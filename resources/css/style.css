@@ -470,11 +470,3 @@ section.portfolio>nav .bar.state-3 .bar-inner {
     width: 46%;
 }
 
-section.portfolio>.works {
-    position: relative;
-}
-
-section.portfolio>.works>.big,
-section.portfolio>.works>.small {
-    position: absolute;
-}
