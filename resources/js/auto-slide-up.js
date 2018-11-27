@@ -7,7 +7,7 @@
 
     setTimeout(function () {
         findClosestSectionAndRemoveOffset()
-    }, 2000)
+    }, 500)
 
     window.onscroll = function () {
         if (window.scrollY > 0) {

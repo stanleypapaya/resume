@@ -214,17 +214,31 @@
 	
 
 	</section>
+	<section class="message">
+		<h2>留言</h2>
+		<ol id="messageList"></ol>
+		<form action="" id="messagePostForm" style="text-align:center; margin-bottom:100px;">
+			<label for="name">姓名：</label>
+			<input type="text" name="name" id="name" style="width: 300px; margin-right: 30px; height: 30px; font-size: 16px;">
+			<label for="message">内容：</label>
+			<input type="text" name="message" id="message" style="width: 300px; height: 30px; font-size: 16px;">
+			<input type="submit" value="提交">
+		</form>
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="//at.alicdn.com/t/font_894935_ykf6ucn6z3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
 	<script src="./resources/js/swiper.js"></script>
 	<script src="./resources/js/auto-slide-up.js"></script>
 	<script src="./resources/js/smooth-slider.js"></script>
+	<script src="./resources/js/message.js"></script>
 	<script>
 		
 		setTimeout(function () {
 			mainWelcome.classList.remove('active')
-		}, 2000)
+		}, 500)
 
 	</script>
 </body>

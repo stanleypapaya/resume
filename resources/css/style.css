@@ -483,3 +483,16 @@ section.portfolio>nav .bar.state-3 .bar-inner {
     width: 46%;
 }
 
+section.message>ol {
+    max-width: 940px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    background: #F6F7F7;
+}
+
+section.message>ol >li {
+    padding: 16px;
+    background: #FBFBFB;
+    border-bottom: 3px solid #ddd;
+}
+
