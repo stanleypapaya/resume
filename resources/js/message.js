@@ -28,6 +28,8 @@ $(document).ready(function(){
         $('input[name=name]')[0].value = ''
       } else{
         alert('请重新输入')
+        $('input[name=message]')[0].value = ''
+        $('input[name=name]')[0].value = ''
       }
     })
   })
@@ -38,10 +40,11 @@ var query = new AV.Query('Message');
     let arr = messages.map(item => item.attributes)
     let messageList = $('#messageList')
     arr.forEach(function(item){
-      let li = $('<li>'+ item.name  + ' : ' + item.content +'</li>')
-      messageList.append(li)
+      if(item.name && item.content){
+        let li = $('<li>'+ item.name  + ' : ' + item.content +'</li>')
+        messageList.append(li)
+      }
     })
-
   }, function (error) {
     alert('留言失败，请改天再来')
   });
