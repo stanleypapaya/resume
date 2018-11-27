@@ -20,12 +20,15 @@ $(document).ready(function(){
     })
     
     .then(function(object){
-      console.log(object)
-      let messageList = $('#messageList')
-      let li = $('<li>'+ object.attributes.name  + ' : ' + object.attributes.content +'</li>')
-      messageList.append(li)
-      $('input[name=message]')[0].value = ''
-      $('input[name=name]')[0].value = ''
+      if(object.attributes.name && object.attributes.content){
+        let messageList = $('#messageList')
+        let li = $('<li>'+ object.attributes.name  + ' : ' + object.attributes.content +'</li>')
+        messageList.append(li)
+        $('input[name=message]')[0].value = ''
+        $('input[name=name]')[0].value = ''
+      } else{
+        alert('请重新输入')
+      }
     })
   })
 })
