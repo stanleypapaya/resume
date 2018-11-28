@@ -1,0 +1,14 @@
+<!-- Message设计思路 -->
+为了对数据进行存储与获取，引入LeanCloud，并初始化
+为form表单绑定submit事件，事件触发时获取表单内容，调用数据库的save()方法，将表单内容存储到数据库
+查看LeanCloud提供的API文档，调用find()方法获取数据，返回一个对象数组，通过每个对象的attributes属性得到我们之前存入的数据，再创建元素将数据添加到页面中
+每次提交留言后需要刷新页面才能在页面显示，为了实现无刷新，在每次保存数据后调用then方法将输入内容直接添加到页面中
+按照MVC模式进行功能划分，Model封装了初始化AV对象、保存数据和获取数据的方法，View是页面的message部分，Controller包含了初始化、更新页面、绑定事件等
+
+<!-- MVC -->
+Model 操作数据
+View 表示视图
+Controller 是控制器
+
+Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View
+用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View

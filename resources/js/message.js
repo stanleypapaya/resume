@@ -18,7 +18,7 @@ $(document).ready(function(){
       'name' : name,
       'content' : content
     })
-    
+
     .then(function(object){
       if(object.attributes.name && object.attributes.content){
         let messageList = $('#messageList')
