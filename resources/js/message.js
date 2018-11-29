@@ -1,10 +1,28 @@
 
 !function(){
   var view = $('.message')
+  var model = {
+    fetch: function(){
+      var query = new AV.Query('Message');
+      return query.find()
+    },
+    save: function(){
+      let content = $('input[name=message]')[0].value
+      let name = $('input[name=name]')[0].value
+      var Message = AV.Object.extend('Message')
+      var message = new Message()
+      return message.save({
+        'name' : name,
+        'content' : content
+      })
+    }
+  }
   var controller = {
     view: null,
-    init: function(view){
+    model: null,
+    init: function(view, model){
       this.view = view
+      this.model = model
       this.initAV()
       this.loadMessage()
       this.bindEvents()
@@ -19,8 +37,7 @@
       });
     },
     loadMessage: function(){
-      var query = new AV.Query('Message');
-      query.find().then(function (messages) {
+      model.fetch().then(function (messages) {
         let arr = messages.map(item => item.attributes)
         let messageList = $('#messageList')
         arr.forEach(function(item){
@@ -37,14 +54,7 @@
       $(document).ready(function(){
         $('#messagePostForm').on('submit', function(e){
           e.preventDefault()
-          let content = $('input[name=message]')[0].value
-          let name = $('input[name=name]')[0].value
-          var Message = AV.Object.extend('Message')
-          var message = new Message()
-          message.save({
-            'name' : name,
-            'content' : content
-          }).then(function(object){
+          model.save().then(function(object){
             if(object.attributes.name && object.attributes.content){
               let messageList = $('#messageList')
               let li = $('<li>'+ object.attributes.name  + ' : ' + object.attributes.content +'</li>')
@@ -61,7 +71,7 @@
       })
     }
   } 
-  controller.init(view)
+  controller.init(view, model)
 }.call()
 
 
