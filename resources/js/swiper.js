@@ -1,6 +1,6 @@
 
 !function(){
-  var view = $('#swiper')
+  var view = View('#swiper')
   var controller = {
     view: null,
     swiper: null,

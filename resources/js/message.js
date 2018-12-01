@@ -1,28 +1,11 @@
 
 !function(){
-  var view = $('.message')
-  var model = {
-    fetch: function(){
-      var query = new AV.Query('Message');
-      return query.find()
-    },
-    save: function(){
-      let content = $('input[name=message]')[0].value
-      let name = $('input[name=name]')[0].value
-      var Message = AV.Object.extend('Message')
-      var message = new Message()
-      return message.save({
-        'name' : name,
-        'content' : content
-      })
-    }
-  }
-  var controller = {
-    view: null,
-    model: null,
+  var view = View('.message')
+
+  var model = Model({resourceName: "Message"})
+  
+  var controller = Controller({
     init: function(view, model){
-      this.view = view
-      this.model = model
       this.initAV()
       this.loadMessage()
       this.bindEvents()
@@ -47,14 +30,16 @@
           }
         })
       }, function (error) {
-        alert('留言失败，请改天再来')
-      });
+        alert('加载留言失败')
+      })
     },
     bindEvents: function(){
       $(document).ready(function(){
         $('#messagePostForm').on('submit', function(e){
           e.preventDefault()
-          model.save().then(function(object){
+          let content = $('input[name=message]')[0].value
+          let name = $('input[name=name]')[0].value
+          model.save({'name': name, 'content': content}).then(function(object){
             if(object.attributes.name && object.attributes.content){
               let messageList = $('#messageList')
               let li = $('<li>'+ object.attributes.name  + ' : ' + object.attributes.content +'</li>')
@@ -66,11 +51,15 @@
               $('input[name=message]')[0].value = ''
               $('input[name=name]')[0].value = ''
             }
+          }, function (error) {
+            alert('留言失败，请改天再来')
           })
         })
       })
     }
-  } 
+
+  })
+  
   controller.init(view, model)
 }.call()
 

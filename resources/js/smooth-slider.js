@@ -1,6 +1,6 @@
 
 !function(){
-    var view = document.querySelectorAll('nav.menu')
+    var view = View('nav.menu')
     var controller = {
       view: null,
       aTags: null,
